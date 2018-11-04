@@ -15,9 +15,7 @@
     <!-- Custom styles for this template -->
     <link href="{asset('css/album.css')}}" rel="stylesheet">
   </head>
-
   <body>
-
     <header>
       <div class="collapse bg-dark" id="navbarHeader">
         <div class="container">

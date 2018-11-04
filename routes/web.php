@@ -15,6 +15,7 @@ Route::get('/', function () {
     return view('welcome_trainer');
 })->name('index.welcome');
 
-// Route::get('Hola/{lastname?}/{firstname?}',function($lastname="Martinez",$firstname="Jose"){
-// 	return "Hola ".$lastname." ".$firstname;
-// });
+Route::group(['prefix' => 'admin'],function(){
+	Route::resource('pokemons','pokemonsController');
+	Route::resource('trainers','trainersController');	
+});

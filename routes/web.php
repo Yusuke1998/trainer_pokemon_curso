@@ -12,5 +12,9 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
-});
+    return view('welcome_trainer');
+})->name('index.welcome');
+
+// Route::get('Hola/{lastname?}/{firstname?}',function($lastname="Martinez",$firstname="Jose"){
+// 	return "Hola ".$lastname." ".$firstname;
+// });

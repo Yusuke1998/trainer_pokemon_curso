@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Pokemon;
 use Illuminate\Http\Request;
 
 class pokemonsController extends Controller
@@ -13,7 +13,9 @@ class pokemonsController extends Controller
      */
     public function index()
     {
-        return view('pokemons.list');
+        $pokemon = new Pokemon;
+
+        return view('pokemons.list',compact('pokemon'));
     }
 
     /**
@@ -34,7 +36,11 @@ class pokemonsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // dd($request);
+        $pokemon = new Pokemon;
+        $pokemon->fill($request->all());
+        return redirect('pokemon.index');
+        
     }
 
     /**

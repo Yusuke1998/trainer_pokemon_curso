@@ -6,27 +6,27 @@
 		</div>
 		<span class="col-md-3"></span>
 		<div class="col-md-6">
-			<form action="{{route('trainers.store')}}" method="POST" enctype="multipart/form-data">
+			<form action="{{route('pokemons.store')}}" method="POST" enctype="multipart/form-data">
+				
 				{!!csrf_field()!!}
 
 				<div class="form-group">
 				    <label for="name">Nombre del Pokemon:</label>
-				    <input type="text" class="form-control" id="name">
-			    </div>
-			    <div class="form-group">
-				    <label for="age">Edad del pokemon:</label>
-				    <input type="number" class="form-control" id="age">
+				    <input type="text" name="name" class="form-control" id="name">
 			    </div>
 				<div class="form-group">
-				    <label for="poke">Habilidades del Pokemon:</label>
-				    <select class="form-control" id="poke" name="poke" multiple>
-				    	<option value="">Volar</option>
-				    	<option value="">Electrocutar</option>
-				    	<option value="">Disparar</option>
+				    <label for="skill">Habilidades del Pokemon:</label>
+				    <select class="form-control" id="skill" name="skill[]" multiple>
+				    	<option value="1">Volar</option>
+				    	<option value="2">Electrocutar</option>
+				    	<option value="3">Disparar</option>
 				    </select>
 			    </div>
 				<div class="form-group">
-					<input type="file" name="imagen"placeholder="Imagen">
+					<input type="file" name="image"placeholder="Imagen">
+				</div>
+				<div class="form-group">
+					<button class="btn btn-info form-control" type="submit">Guardar</button>
 				</div>
 			</form>
 		</div>

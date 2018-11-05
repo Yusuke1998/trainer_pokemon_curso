@@ -13,7 +13,7 @@ class trainersController extends Controller
      */
     public function index()
     {
-        //
+        return view('trainers.list');
     }
 
     /**

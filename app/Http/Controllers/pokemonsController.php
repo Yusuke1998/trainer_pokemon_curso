@@ -36,10 +36,24 @@ class pokemonsController extends Controller
      */
     public function store(Request $request)
     {
-        // dd($request);
         $pokemon = new Pokemon;
-        $pokemon->fill($request->all());
-        return redirect('pokemon.index');
+            // Guardando archivo imagen en 'storage/app/images'
+            // $request->file('image')->public('images');
+
+        if($request->hasFile('image')){
+
+            $file = $request->file('image');
+            $name = $file->getClientOriginalName();
+            $path = public_path() .'\pokemon';        
+            $file->move($path,$name);
+            
+            $pokemon->name = $request->name;
+            $pokemon->skill = $request->skill;
+            $pokemon->image = $name;
+            $pokemon->save();
+        } 
+
+        return back();
         
     }
 

@@ -16,7 +16,7 @@
 			    </div>
 				<div class="form-group">
 				    <label for="skill">Habilidades del Pokemon:</label>
-				    <select class="form-control" id="skill" name="skill[]" multiple>
+				    <select class="form-control" id="skill" name="skill" multiple>
 				    	<option value="1">Volar</option>
 				    	<option value="2">Electrocutar</option>
 				    	<option value="3">Disparar</option>
@@ -32,4 +32,5 @@
 		</div>
 		<span class="col-md-3"></span>
 	</div>
+	{{-- <img width="400" src="/pokemon/ella.jpg" alt=""> --}}
 @endsection
